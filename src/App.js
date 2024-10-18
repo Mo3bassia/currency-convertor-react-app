@@ -9,6 +9,7 @@ export default function App() {
   const [currencyValue, setCurrencyValue] = useState(1);
   const [result, setResult] = useState("");
   const [allCurrencies, setAllCurrencies] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   function fetchData(e) {
     setCurrencyValue(e.target.value);
@@ -18,6 +19,7 @@ export default function App() {
   useEffect(
     function () {
       async function convert() {
+        setIsLoaded(false);
         if (toSelect === fromSelect) {
           setResult(currencyValue);
           return;
@@ -27,6 +29,7 @@ export default function App() {
         );
         const data = await response.json();
         setResult(data.rates[toSelect]);
+        setIsLoaded(true);
       }
       convert();
     },
@@ -70,7 +73,9 @@ export default function App() {
       </div>
 
       <h2>
-        {currencyValue} {fromSelect} = {result} {toSelect}
+        {isLoaded
+          ? `${currencyValue} ${fromSelect} = ${result} ${toSelect}`
+          : "Loading..."}
       </h2>
     </Container>
   );
@@ -79,10 +84,6 @@ export default function App() {
 function Container({ children }) {
   return <div className="container">{children}</div>;
 }
-
-// function Result() {
-//   useEffect;
-// }
 
 function OptionsCurrencies({ allCurrencies }) {
   return (
