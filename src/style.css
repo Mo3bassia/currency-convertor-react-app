@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: #f8f9fa; /* خلفية فاتحة وعصرية */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* ظل خفيف */
+  width: 95%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 25px 0 15px; /* تعديل الهوامش */
+  color: #343a40; /* لون داكن جميل */
+}
+
+.form-group {
+  margin-bottom: 20px; /* مساحة بين العناصر */
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #495057;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #6c757d; /* لون رمادي غامق */
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #28a745; /* لون أخضر عند التركيز */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* تأثير ظل عند التركيز */
+  outline: none;
+}
+
+.select-group {
+  display: flex;
+  justify-content: center; /* توزيع العناصر */
+  gap: 10px; /* فجوة بين العناصر */
+  margin-bottom: 20px; /* مساحة أسفل مجموعة select */
+  margin-block: 20px;
+  align-items: center;
+}
+
+select {
+  flex: none; /* عدم تمديد العنصر لأخذ المساحة الكاملة */
+  width: auto; /* أخذ عرض المحتوى فقط */
+  padding: 14px;
+  border: 2px solid #6c757d; /* لون رمادي غامق */
+  border-radius: 10px;
+  transition: border-color 0.3s;
+  background-color: #ffffff; /* خلفية بيضاء */
+  appearance: none; /* إزالة السهم الافتراضي */
+  text-align: center; /* محاذاة النص إلى الوسط */
+}
+
+select:focus {
+  border-color: #28a745; /* لون أخضر عند التركيز */
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #28a745; /* لون أخضر */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px; /* إضافة مساحة بين الزر والعناصر الأخرى */
+}
+
+button:hover {
+  background-color: #218838; /* لون أغمق عند التحويم */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0); /* إعادة الزر عند الضغط */
+}
